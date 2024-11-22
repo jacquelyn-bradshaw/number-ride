@@ -1,5 +1,6 @@
-import styles from "./page.module.css";
 import Link from "next/link";
+
+import styles from "./page.module.css";
 
 export default function About() {
   return (
@@ -8,6 +9,7 @@ export default function About() {
       <p>
         <Link href="/">Home</Link>
       </p>
+      <img src="./public/jacquelyn.jpg" alt="Image of Jacquelyn" />
     </main>
   );
 }
