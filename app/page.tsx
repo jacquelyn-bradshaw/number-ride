@@ -1,14 +1,9 @@
-import Link from "next/link";
-
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>My App</h1>
-      <p>
-        <Link href="/about">About</Link>
-      </p>
+      <h1>Hi</h1>
     </main>
   );
 }
