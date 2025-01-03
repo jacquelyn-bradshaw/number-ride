@@ -7,12 +7,14 @@ export default function AnswerButtons({
 }: {
   correctAnswer: number;
 }) {
-  const possibleAnswers = [
-    correctAnswer,
-    randomNumber(20),
-    randomNumber(20),
-    randomNumber(20),
-  ];
+  const possibleAnswers = [correctAnswer];
+
+  while (possibleAnswers.length < 4) {
+    const nextRandomNumber = randomNumber(20);
+    if (!possibleAnswers.includes(nextRandomNumber)) {
+      possibleAnswers.push(nextRandomNumber);
+    }
+  }
 
   return (
     <div className={styles.buttons}>
