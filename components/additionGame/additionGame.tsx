@@ -1,6 +1,6 @@
+import AnswerButtons from "../answerButtons/answerButtons";
 import styles from "./additionGame.module.scss";
 import randomNumber from "../../utils/randomNumber";
-import AnswerButtons from "../answerButtons/answerButtons";
 
 export default function AdditionGame({ amount }: { amount: number }) {
   const max = 20 - amount;
