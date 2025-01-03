@@ -4,7 +4,7 @@ import "./globals.css";
 import Header from "@/components/header/header";
 
 export const metadata: Metadata = {
-  title: "My App",
+  title: "Number Ride",
   description: "",
 };
 
