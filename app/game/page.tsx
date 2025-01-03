@@ -2,7 +2,8 @@ import AdditionGame from "@/components/additionGame/additionGame";
 import styles from "./page.module.css";
 
 interface SearchParams {
-  add: number;
+  type: string;
+  amount: number;
 }
 
 export default async function Addition({
@@ -13,7 +14,7 @@ export default async function Addition({
   const params = await searchParams;
   return (
     <main className={styles.main}>
-      <AdditionGame add={params.add} />
+      <AdditionGame add={params.amount} />
     </main>
   );
 }

@@ -10,9 +10,10 @@ export default function Home() {
         <h2>Addition</h2>
         <Link
           href={{
-            pathname: "/addition",
+            pathname: "/game",
             query: {
-              add: 1,
+              type: "addition",
+              amount: 1,
             },
           }}
         >
@@ -20,9 +21,10 @@ export default function Home() {
         </Link>
         <Link
           href={{
-            pathname: "/addition",
+            pathname: "/game",
             query: {
-              add: 1,
+              type: "addition",
+              amount: 2,
             },
           }}
         >
