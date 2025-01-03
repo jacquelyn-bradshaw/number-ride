@@ -9,7 +9,7 @@ export default function SubtractionGame({ amount }: { amount: number }) {
     <div className={styles.main}>
       <h2>Subtract {amount}</h2>
       <p>
-        {randomNumber(max)} + {amount} =
+        {randomNumber(max)} - {amount} =
       </p>
       <AnswerButtons />
     </div>

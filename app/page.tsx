@@ -11,8 +11,8 @@ export default function Home() {
       </div>
       <div className={styles.container}>
         <h2>Subtraction</h2>
-        <GameLink type="subtraction" amount={1} text="+1" />
-        <GameLink type="subtraction" amount={2} text="+2" />
+        <GameLink type="subtraction" amount={1} text="-1" />
+        <GameLink type="subtraction" amount={2} text="-2" />
       </div>
     </main>
   );
