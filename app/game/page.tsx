@@ -12,9 +12,18 @@ export default async function Addition({
   searchParams: Promise<SearchParams>;
 }) {
   const params = await searchParams;
+
+  const GameType = () => {
+    if (params.type === "addition") {
+      return <AdditionGame add={params.amount} />;
+    } else if (params.type === "subtraction") {
+      return <h2>Subtraction</h2>;
+    }
+  };
+
   return (
     <main className={styles.main}>
-      <AdditionGame add={params.amount} />
+      <GameType />
     </main>
   );
 }

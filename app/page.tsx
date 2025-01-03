@@ -9,7 +9,11 @@ export default function Home() {
         <h2>Addition</h2>
         <GameLink type="addition" amount={1} text="+1" />
         <GameLink type="addition" amount={2} text="+2" />
-        <GameLink type="addition" amount={3} text="+3" />
+      </div>
+      <div>
+        <h2>Subtraction</h2>
+        <GameLink type="subtraction" amount={1} text="+1" />
+        <GameLink type="subtraction" amount={2} text="+2" />
       </div>
     </main>
   );
