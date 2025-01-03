@@ -1,9 +1,34 @@
+import Link from "next/link";
+import Button from "@/components/button/button";
+
 import styles from "./page.module.css";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <h1>Number Ride</h1>
+      <div>
+        <h2>Addition</h2>
+        <Link
+          href={{
+            pathname: "/addition",
+            query: {
+              add: 1,
+            },
+          }}
+        >
+          <Button text="+1" />
+        </Link>
+        <Link
+          href={{
+            pathname: "/addition",
+            query: {
+              add: 1,
+            },
+          }}
+        >
+          <Button text="+2" />
+        </Link>
+      </div>
     </main>
   );
 }
