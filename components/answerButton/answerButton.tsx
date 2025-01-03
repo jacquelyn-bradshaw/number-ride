@@ -1,5 +1,16 @@
+"use client";
+
 import styles from "./answerButton.module.scss";
 
-export default function AnswerButton({ answer }: { answer: number }) {
-  return <button className={styles.button}>{answer}</button>;
+interface AnswerButtonProps {
+  answer: number;
+  onSelect: (answer: number) => void;
+}
+
+export default function AnswerButton({ answer, onSelect }: AnswerButtonProps) {
+  return (
+    <button className={styles.button} onClick={() => onSelect(answer)}>
+      {answer}
+    </button>
+  );
 }
