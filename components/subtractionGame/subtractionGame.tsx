@@ -1,4 +1,4 @@
-import styles from "./subtractionGame.module.css";
+import styles from "./subtractionGame.module.scss";
 
 export default function SubtractionGame({ amount }: { amount: number }) {
   return (

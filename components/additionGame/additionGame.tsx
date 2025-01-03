@@ -1,4 +1,4 @@
-import styles from "./additionGame.module.css";
+import styles from "./additionGame.module.scss";
 
 export default function AdditionGame({ amount }: { amount: number }) {
   return (

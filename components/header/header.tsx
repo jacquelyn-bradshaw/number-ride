@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 import logo from "@/public/logo.png";
-
 import styles from "./header.module.scss";
 
 export default function Header() {

@@ -1,6 +1,5 @@
 import AdditionGame from "@/components/additionGame/additionGame";
 import SubtractionGame from "@/components/subtractionGame/subtractionGame";
-import styles from "./page.module.css";
 
 interface SearchParams {
   type: string;
@@ -23,7 +22,7 @@ export default async function Addition({
   };
 
   return (
-    <main className={styles.main}>
+    <main>
       <GameType />
     </main>
   );

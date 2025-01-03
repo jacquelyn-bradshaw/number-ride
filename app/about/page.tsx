@@ -1,8 +1,7 @@
 import Image from "next/image";
 
 import profileImage from "@/public/jacquelyn.jpg";
-
-import styles from "./page.module.css";
+import styles from "./page.module.scss";
 
 export default function About() {
   return (
