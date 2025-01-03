@@ -11,7 +11,7 @@ export default function Header() {
       <Link href="/">
         <Image src={logo} width={50} height={50} alt="Learning Logo" />
       </Link>
-      <h1>My App</h1>
+      <h1>Number Ride</h1>
       <nav className={styles.nav}>
         <ul>
           <li>
