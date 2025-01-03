@@ -1,4 +1,5 @@
 import AdditionGame from "@/components/additionGame/additionGame";
+import SubtractionGame from "@/components/subtractionGame/subtractionGame";
 import styles from "./page.module.css";
 
 interface SearchParams {
@@ -15,9 +16,9 @@ export default async function Addition({
 
   const GameType = () => {
     if (params.type === "addition") {
-      return <AdditionGame add={params.amount} />;
+      return <AdditionGame amount={params.amount} />;
     } else if (params.type === "subtraction") {
-      return <h2>Subtraction</h2>;
+      return <SubtractionGame amount={params.amount} />;
     }
   };
 
