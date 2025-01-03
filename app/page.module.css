@@ -23,10 +23,6 @@
 
 .main {
   padding: 20px;
-  background-image: url("../public/transport-background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .main h1 {

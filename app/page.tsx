@@ -1,4 +1,4 @@
-import GameLink from "@/components/gameLink";
+import GameLink from "@/components/gameLink/gameLink";
 
 import styles from "./page.module.css";
 
