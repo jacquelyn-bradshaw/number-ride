@@ -4,7 +4,8 @@ import styles from "./subtractionGame.module.scss";
 
 export default function SubtractionGame({ amount }: { amount: number }) {
   const max = 20;
-  const currentNumber = randomNumber(max);
+  const min = 0 + amount;
+  const currentNumber = randomNumber(max, min);
   const correctAnswer = Number(currentNumber) - Number(amount);
 
   return (
