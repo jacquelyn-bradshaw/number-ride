@@ -1,23 +1,20 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
+
 import AdditionGame from "@/components/additionGame/additionGame";
 import SubtractionGame from "@/components/subtractionGame/subtractionGame";
 
-interface SearchParams {
-  type: string;
-  amount: number;
-}
-
-export default async function Addition({
-  searchParams,
-}: {
-  searchParams: Promise<SearchParams>;
-}) {
-  const params = await searchParams;
+export default function Game() {
+  const params = useSearchParams();
+  const type = params.get("type");
+  const amount = Number(params.get("amount"));
 
   const GameType = () => {
-    if (params.type === "addition") {
-      return <AdditionGame amount={params.amount} />;
-    } else if (params.type === "subtraction") {
-      return <SubtractionGame amount={params.amount} />;
+    if (type === "addition") {
+      return <AdditionGame amount={amount} />;
+    } else if (type === "subtraction") {
+      return <SubtractionGame amount={amount} />;
     }
   };
 
