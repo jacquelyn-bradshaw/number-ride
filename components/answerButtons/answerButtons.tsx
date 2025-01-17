@@ -15,7 +15,7 @@ export default function AnswerButtons({
   const possibleAnswers = [correctAnswer];
 
   while (possibleAnswers.length < 4) {
-    const nextRandomNumber = randomNumber(20);
+    const nextRandomNumber = randomNumber(20, 0);
     if (!possibleAnswers.includes(nextRandomNumber)) {
       possibleAnswers.push(nextRandomNumber);
     }
