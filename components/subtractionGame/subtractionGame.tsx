@@ -6,7 +6,6 @@ export default function SubtractionGame({ amount }: { amount: number }) {
   const max = 20;
   const min = 0 + amount;
   const currentNumber = randomNumber(max, min);
-  const correctAnswer = Number(currentNumber) - Number(amount);
 
   return (
     <div>
@@ -14,7 +13,7 @@ export default function SubtractionGame({ amount }: { amount: number }) {
       <p className={styles.question}>
         {currentNumber} - {amount} =
       </p>
-      <AnswerButtons correctAnswer={correctAnswer} />
+      <AnswerButtons currentNumber={currentNumber} amount={amount} symbol="-" />
     </div>
   );
 }

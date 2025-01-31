@@ -5,7 +5,6 @@ import styles from "./additionGame.module.scss";
 export default function AdditionGame({ amount }: { amount: number }) {
   const max = 20 - amount;
   const currentNumber = randomNumber(max, 0);
-  const correctAnswer = Number(currentNumber) + Number(amount);
 
   return (
     <div>
@@ -13,7 +12,7 @@ export default function AdditionGame({ amount }: { amount: number }) {
       <p className={styles.question}>
         {currentNumber} + {amount} =
       </p>
-      <AnswerButtons correctAnswer={correctAnswer} />
+      <AnswerButtons currentNumber={currentNumber} amount={amount} symbol="+" />
     </div>
   );
 }

@@ -2,26 +2,29 @@
 import { useState } from "react";
 
 import AnswerButton from "@/components/answerButton/answerButton";
-import randomNumber from "@/utils/randomNumber";
+import { generatePossibleAnswers } from "@/utils/generatePossibleAnswers";
+import { getCorrectAnswer } from "@/utils/getCorrectAnswer";
+import { checkAnswer } from "@/utils/checkAnswer";
 import styles from "./answerButtons.module.scss";
 
+interface AnswerButtonsProps {
+  currentNumber: number;
+  amount: number;
+  symbol: string;
+}
+
 export default function AnswerButtons({
-  correctAnswer,
-}: {
-  correctAnswer: number;
-}) {
+  currentNumber,
+  amount,
+  symbol,
+}: AnswerButtonsProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
 
-  const possibleAnswers = [correctAnswer];
-
-  while (possibleAnswers.length < 4) {
-    const nextRandomNumber = randomNumber(20, 0);
-    if (!possibleAnswers.includes(nextRandomNumber)) {
-      possibleAnswers.push(nextRandomNumber);
-    }
-  }
+  const correctAnswer = getCorrectAnswer(currentNumber, symbol, amount);
+  const possibleAnswers = generatePossibleAnswers(correctAnswer);
 
   const selectAnswer = (answer: number) => {
+    checkAnswer(answer, amount, symbol, currentNumber);
     setSelectedAnswer(answer);
   };
 
