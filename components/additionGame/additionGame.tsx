@@ -14,7 +14,7 @@ export default function AdditionGame({
 
   return (
     <div>
-      <h2>Add {amount}</h2>
+      <h2 data-testid="addition-heading">Add {amount}</h2>
       <p className={styles.question}>
         {currentNumber} + {amount} =
       </p>

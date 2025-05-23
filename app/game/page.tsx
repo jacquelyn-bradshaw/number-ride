@@ -21,7 +21,7 @@ export default function Game() {
     if (type === "addition") {
       return <AdditionGame amount={amount} updateScore={updateScore} />;
     } else if (type === "subtraction") {
-      return <SubtractionGame amount={amount} />;
+      return <SubtractionGame amount={amount} updateScore={updateScore} />;
     }
   };
 

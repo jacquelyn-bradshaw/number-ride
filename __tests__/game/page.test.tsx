@@ -17,7 +17,7 @@ describe("Game Page", () => {
     });
 
     render(<Game />);
-    const subheading = screen.getByRole("heading", { level: 2 });
+    const subheading = screen.getByTestId("addition-heading");
     expect(subheading).toBeInTheDocument();
     expect(subheading).toHaveTextContent("Add 1");
 
@@ -37,7 +37,7 @@ describe("Game Page", () => {
     });
 
     render(<Game />);
-    const subheading = screen.getByRole("heading", { level: 2 });
+    const subheading = screen.getByTestId("subtraction-heading");
     expect(subheading).toBeInTheDocument();
     expect(subheading).toHaveTextContent("Subtract 1");
 
