@@ -11,12 +11,14 @@ interface AnswerButtonsProps {
   currentNumber: number;
   amount: number;
   symbol: string;
+  updateScore: (score: number) => void;
 }
 
 export default function AnswerButtons({
   currentNumber,
   amount,
   symbol,
+  updateScore,
 }: AnswerButtonsProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const { callApiCheckAnswer } = useApi("/api/checkanswer");
@@ -42,6 +44,10 @@ export default function AnswerButtons({
       console.log("result", result);
     } catch (error) {
       console.error("Error checking answer:", error);
+    } finally {
+      if (answer === correctAnswer) {
+        updateScore(1);
+      }
     }
   };
 
