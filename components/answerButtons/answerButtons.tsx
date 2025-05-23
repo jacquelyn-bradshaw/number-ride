@@ -1,10 +1,10 @@
 "use client";
 import { useState } from "react";
+import { useApi } from "@/hooks/useApi";
 
 import AnswerButton from "@/components/answerButton/answerButton";
 import { generatePossibleAnswers } from "@/utils/generatePossibleAnswers";
 import { getCorrectAnswer } from "@/utils/getCorrectAnswer";
-import { checkAnswer } from "@/utils/checkAnswer";
 import styles from "./answerButtons.module.scss";
 
 interface AnswerButtonsProps {
@@ -19,13 +19,30 @@ export default function AnswerButtons({
   symbol,
 }: AnswerButtonsProps) {
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
+  const { callApiCheckAnswer } = useApi("/api/checkanswer");
 
   const correctAnswer = getCorrectAnswer(currentNumber, symbol, amount);
   const possibleAnswers = generatePossibleAnswers(correctAnswer);
 
-  const selectAnswer = (answer: number) => {
-    checkAnswer(answer, amount, symbol, currentNumber);
-    setSelectedAnswer(answer);
+  const selectAnswer = async (answer: number) => {
+    try {
+      const result = await callApiCheckAnswer({
+        method: "POST",
+        body: JSON.stringify({
+          answer,
+          amount,
+          symbol,
+          currentNumber,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      setSelectedAnswer(answer);
+      console.log("result", result);
+    } catch (error) {
+      console.error("Error checking answer:", error);
+    }
   };
 
   return (
