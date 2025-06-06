@@ -1,9 +1,20 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import GameLink from "@/components/gameLink/gameLink";
 import styles from "./page.module.scss";
 
 export default function Home() {
+  const [score, setScore] = useState<string | null>(null);
+
+  useEffect(() => {
+    const storedScore = localStorage.getItem("userScore") || "0";
+    setScore(storedScore);
+  }, []);
+
   return (
     <main>
+      <h2>User Score: {score}</h2>
       <div className={styles.container}>
         <h2>Addition</h2>
         <GameLink type="addition" amount={1} text="+ 1" />
