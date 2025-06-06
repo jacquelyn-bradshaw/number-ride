@@ -10,6 +10,15 @@
   justify-items: center;
 }
 
+.container {
+  margin-bottom: 2rem;
+  width: fit-content;
+}
+
+.score {
+  text-align: right;
+}
+
 @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
@@ -19,9 +28,4 @@
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
   }
-}
-
-.container {
-  margin-bottom: 2rem;
-  width: fit-content;
 }

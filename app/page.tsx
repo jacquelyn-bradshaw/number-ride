@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <main>
-      <h2>User Score: {score}</h2>
+      <h3 className={styles.score}>User Score: {score}</h3>
       <div className={styles.container}>
         <h2>Addition</h2>
         <GameLink type="addition" amount={1} text="+ 1" />
